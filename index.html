@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Toko Beras Organik Jogja terbaik. Menyediakan Beras Merah Jogja, Gamagora, & Mentik Wangi. Freshly milled, 100% alami langsung dari petani lokal Yogyakarta.">
+    <title>Shorani Agro Jogja | Toko Beras Organik & Sehat Terbaik di Jogja</title>
+    <style>
+        :root {
+            --primary: #2d6a4f;
+            --primary-dark: #1b4332;
+            --secondary: #d4a373;
+            --accent: #52b788;
+            --bg-light: #f4f9f4;
+            --text-dark: #2b2b2b;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header & Navbar */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(27, 67, 50, 0.8), rgba(27, 67, 50, 0.8)), url('https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            max-width: 800px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin-bottom: 30px;
+            color: #e9ecef;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-dark);
+        }
+
+        /* Container & Sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+        }
+
+        /* Features / Why Us */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Products Catalog */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            height: 220px;
+            background: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-body {
+            padding: 25px;
+        }
+
+        .product-body h3 {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .product-body p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px 25px 25px;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Promo Banner */
+        .promo-banner {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: var(--shadow);
+        }
+
+        .promo-banner h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .promo-banner p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            color: #f8f9fa;
+        }
+
+        .price-tag {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ffd166;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .price-tag span {
+            text-decoration: line-through;
+            font-size: 1.2rem;
+            color: #adb5bd;
+            margin-right: 10px;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .client-info h4 {
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+        }
+
+        .client-info span {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px 20px;
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 20px 30px 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .footer-col p, .footer-col a {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        /* Floating WA Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            background-color: #20ba5a;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">🌾 Shorani Agro Jogja</a>
+            <ul class="nav-links">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#keunggulan">Keunggulan</a></li>
+                <li><a href="#katalog">Katalog Produk</a></li>
+                <li><a href="#promo">Promo</a></li>
+                <li><a href="#testimoni">Testimoni</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <a href="https://tiny.cc/AdminShoraniAgro" target="_blank" class="btn-primary">Pesan WA</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="beranda">
+        <h1>Toko Beras Organik Jogja: Segar, Murni, Langsung dari Petani Lokal</h1>
+        <p>Nikmati kelezatan dan nutrisi murni dari Beras Organik Jogja pilihan. Diproses dengan sistem Freshly Milled to Order, menjaga kualitas alami tanpa pupuk maupun pestisida kimia.</p>
+        <div class="hero-buttons">
+            <a href="https://tiny.cc/AdminShoraniAgro" target="_blank" class="btn-primary">Pesan Sekarang via WhatsApp</a>
+            <a href="#katalog" class="btn-secondary">Lihat Katalog Produk</a>
+        </div>
+    </section>
+
+    <!-- Keunggulan Utama -->
+    <section class="container" id="keunggulan">
+        <h2 class="section-title">Mengapa Memilih Shorani Agro Jogja?</h2>
+        <p class="section-subtitle">Komitmen kami menghadirkan pangan sehat berkualitas tinggi untuk keluarga Anda</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Berpengalaman 5+ Tahun</h3>
+                <p>Dipercaya ratusan keluarga sebagai Toko Beras andalan untuk menyediakan pangan sehat berkualitas tinggi secara konsisten.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Freshly Milled to Order</h3>
+                <p>Bukan beras timbunan gudang! Beras baru digiling otomatis setelah pesanan masuk demi menjaga nutrisi dan aroma kesegaran.</p>
+            </div>
+            <div class="feature-card">
+                <h3>100% Petani Lokal</h3>
+                <p>Hasil panen asli dari sawah petani lokal Yogyakarta dengan standar budidaya tradisional rumahan yang higienis.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Bebas Bahan Kimia</h3>
+                <p>100% murni organik, bebas dari pupuk kimia buatan dan pestisida berbahaya. Aman untuk program diet & kesehatan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Katalog Produk -->
+    <section class="container" id="katalog" style="background-color: var(--white); border-radius: 20px; margin: 40px auto; box-shadow: var(--shadow);">
+        <h2 class="section-title">Pilihan Varian Beras Organik Terbaik</h2>
+        <p class="section-subtitle">Semua Varian Harga Sama: Rp25.000 / kg</p>
+
+        <div class="products-grid">
+            <!-- Produk 1 -->
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="product-body">
+                    <h3>Beras Merah Jogja</h3>
+                    <p>Kaya serat alami, sangat baik untuk diet, penderita diabetes, dan menjaga kesehatan jantung serta pencernaan.</p>
+                </div>
+                <div class="product-footer">
+                    <span class="price">Rp25.000 / kg</span>
+                    <a href="https://tiny.cc/AdminShoraniAgro" target="_blank" class="btn-primary">Pilih</a>
+                </div>
+            </div>
+
+            <!-- Produk 2 -->
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="product-body">
+                    <h3>Beras Gamagora</h3>
+                    <p>Varietas unggul hasil inovasi lokal berkualitas tinggi dengan tekstur pulen sempurna dan cita rasa khas nusantara.</p>
+                </div>
+                <div class="product-footer">
+                    <span class="price">Rp25.000 / kg</span>
+                    <a href="https://tiny.cc/AdminShoraniAgro" target="_blank" class="btn-primary">Pilih</a>
+                </div>
+            </div>
+
+            <!-- Produk 3 -->
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="product-body">
+                    <h3>Beras Mentik Wangi</h3>
+                    <p>Memiliki aroma harum alami yang khas, sangat pulen, dan lezat untuk sajian makan harian keluarga tercinta.</p>
+                </div>
+                <div class="product-footer">
+                    <span class="price">Rp25.000 / kg</span>
+                    <a href="https://tiny.cc/AdminShoraniAgro" target="_blank" class="btn-primary">Pilih</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Section -->
+    <section class="container" id="promo">
+        <div class="promo-banner">
+            <h2>🔥 Promo Spesial Paket Hemat Keluarga</h2>
+            <p>Amankan stok beras sehat di rumah lebih hemat minggu ini. Bisa campur varian sesuai selera!</p>
+            <span class="price-tag"><span>Rp125.000</span> Rp110.000 / 5 kg</span>
+            <a href="https://tiny.cc/AdminShoraniAgro" target="_blank" class="btn-primary" style="background-color: var(--secondary); color: var(--primary-dark); font-size: 1.1rem; padding: 12px 30px;">Klaim Promo 5 Kg Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section class="container" id="testimoni">
+        <h2 class="section-title">Apa Kata Pelanggan Setia Kami?</h2>
+        <p class="section-subtitle">Telah dipercaya oleh ratusan pelanggan selama lebih dari 5 tahun</p>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p>"Sebagai ibu rumah tangga, saya sangat picky soal kesehatan anak. Beras merah dan mentik wangi dari Shorani Agro benar-benar beda, nasinya pulen, fresh karena digiling pas pesan!"</p>
+                <div class="client-info">
+                    <h4>Ibu Dian</h4>
+                    <span>Pelanggan Setia di Yogyakarta (5+ Tahun)</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>"Udah langganan lama beli di Shorani Agro Jogja. Pelayanannya ramah, harganya stabil, dan kualitas organiknya terbukti bikin badan lebih fit dan pencernaan lancar."</p>
+                <div class="client-info">
+                    <h4>Bapak Rahmat</h4>
+                    <span>Pelanggan Setia di Sleman</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container" id="faq" style="background-color: var(--white); border-radius: 20px; margin: 40px auto; box-shadow: var(--shadow);">
+        <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+        <p class="section-subtitle">Informasi seputar pemesanan dan produk kami</p>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">Q: Apakah benar beras digiling saat ada pesanan saja?</div>
+                <div class="faq-answer">Betul! Konsep kami adalah *freshly milled to order*. Gabah baru akan digiling menjadi beras bersih tepat setelah pesanan Anda masuk agar nutrisi dan aromanya terjaga sempurna.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: Bagaimana cara penyimpanan beras organik tanpa pengawet?</div>
+                <div class="faq-answer">Simpan di wadah tertutup yang kering dan terhindar dari panas matahari langsung agar kualitas alaminya tetap terjaga optimal dalam jangka panjang.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: Bagaimana metode pembayaran dan pengirimannya?</div>
+                <div class="faq-answer">Pembayaran dapat melalui transfer bank atau e-wallet, dan pengiriman dikoordinasikan langsung via WhatsApp dengan berbagai opsi kurir terpercaya.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Shorani Agro Jogja</h3>
+                <p>Toko Beras Organik & Sehat terpercaya dengan pengalaman lebih dari 5 tahun menyajikan produk alami langsung dari petani lokal Yogyakarta.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Kontak & Lokasi</h3>
+                <p>📍 <a href="https://maps.app.goo.gl/xQndabyZestW1f299" target="_blank">Lihat Google Maps</a></p>
+                <p>💬 <a href="https://tiny.cc/AdminShoraniAgro" target="_blank">WhatsApp Admin</a></p>
+                <p>📸 <a href="https://instagram.com/shoraniagro.jogja" target="_blank">@shoraniagro.jogja</a></p>
+                <p>✉️ shoraniagro@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h3>Target SEO Keywords</h3>
+                <p>Toko Beras</p>
+                <p>Beras Merah Jogja</p>
+                <p>Beras Organik Jogja</p>
+                <p>Shorani Agro Jogja</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Shorani Agro Jogja. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://tiny.cc/AdminShoraniAgro" target="_blank" class="whatsapp-float">
+        💬 Chat WhatsApp
+    </a>
+
+</body>
+</html>
